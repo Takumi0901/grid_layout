@@ -1,0 +1,160 @@
+/** { 
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}*/
+
+
+.grid { 
+	width: 100%;
+	margin: 0 auto;
+	letter-spacing: -0.35em;
+}
+
+.grid--right{
+	text-align: right;
+}
+
+.grid--center{
+	text-align: center;
+}
+.grid--justify {
+	display: block;
+	text-align: justify;
+	text-justify: distribute-all-lines;
+}
+
+.grid--justify:after {
+	content: '';
+	display: inline-block;
+	width: 100%;
+}
+
+.grid--middle .grid__col{
+	vertical-align: middle;
+}
+
+.grid--top .grid__col{
+	vertical-align: top;
+}
+
+.grid--bottom .grid__col{
+	vertical-align: bottom;
+}
+
+/*.grid:after,
+.row:after, 
+.grid__col:after, 
+.clr:after, 
+.group:after { 
+	content: ""; 
+	display: table; 
+	clear: both; 
+}*/
+
+/*.row { padding-bottom: 0em;
+}*/
+
+
+.grid__col { 
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	display: block;
+	width: 100%;
+	vertical-align: top;
+	letter-spacing: normal;
+	word-spacing: normal;
+	word-wrap: break-word;
+}
+
+.grid__col--middle{
+	vertical-align: middle;
+}
+
+.grid__col--top{
+	vertical-align: top;
+}
+
+.grid__col--bottom{
+	vertical-align: bottom;
+}
+
+/*.grid__col--right{
+	margin-right: auto;
+}*/
+
+@media ( min-width : 768px ) {
+	
+	.grid--gutters .grid__col {
+		margin-left: 2%;
+	}
+	
+	.grid--gutters .grid__col:first-child { 
+		margin-left: 0; 
+	}
+}
+
+
+
+
+/*	COLUMN WIDTH ON DISPLAYS +768px 
+	You might need to play with media queries here to suite your design. */
+@media ( min-width : 768px ) {
+
+	.grid__col { 
+		display: inline-block;
+		width: auto;
+	}
+	.grid__col--1 { width: 8.33333333333%; }
+	.grid__col--2 { width: 16.6666666667%; }
+	.grid__col--3 { width: 25%; }
+	.grid__col--4 { width: 33.3333333333%; }
+	.grid__col--5 { width: 41.6666666667%; }
+	.grid__col--6 { width: 50%; }
+	.grid__col--7 { width: 58.3333333333%; }
+	.grid__col--8 { width: 66.6666666667%; }
+	.grid__col--9 { width: 75%; }
+	.grid__col--10 { width: 83.3333333333%; }
+	.grid__col--11 { width: 91.6666666667%; }
+	.grid__col--12 { width: 100%; }
+
+	.grid__offset--1 { margin-right: 8.33333333333%; }
+	.grid__offset--2 { margin-right: 16.6666666667%; }
+	.grid__offset--3 { margin-right: 25%; }
+	.grid__offset--4 { margin-right: 33.3333333333%; }
+	.grid__offset--5 { margin-right: 41.6666666667%; }
+	.grid__offset--6 { margin-right: 50%; }
+	.grid__offset--7 { margin-right: 58.3333333333%; }
+	.grid__offset--8 { margin-right: 66.6666666667%; }
+	.grid__offset--9 { margin-right: 75%; }
+	.grid__offset--10 { margin-right: 83.3333333333%; }
+	.grid__offset--11 { margin-right: 91.6666666667%; }
+	.grid__offset--12 { margin-right: 100%; }
+	
+	.grid--gutters .grid__col--1 { width: 6.5%; }
+	.grid--gutters .grid__col--2 { width: 15.0%; }
+	.grid--gutters .grid__col--3 { width: 23.5%; }
+	.grid--gutters .grid__col--4 { width: 32.0%; }
+	.grid--gutters .grid__col--5 { width: 40.5%; }
+	.grid--gutters .grid__col--6 { width: 49.0%; }
+	.grid--gutters .grid__col--7 { width: 57.5%; }
+	.grid--gutters .grid__col--8 { width: 66.0%; }
+	.grid--gutters .grid__col--9 { width: 74.5%; }
+	.grid--gutters .grid__col--10 { width: 83.0%; }
+	.grid--gutters .grid__col--11 { width: 91.5%; }
+	.grid--gutters .grid__col--12 { width: 100%; }
+
+	.grid--gutters .grid__offset--1 { margin-right: 8.5%; }
+	.grid--gutters .grid__offset--2 { margin-right: 17.0%; }
+	.grid--gutters .grid__offset--3 { margin-right: 25.5%; }
+	.grid--gutters .grid__offset--4 { margin-right: 34.0%; }
+	.grid--gutters .grid__offset--5 { margin-right: 42.5%; }
+	.grid--gutters .grid__offset--6 { margin-right: 51.0%; }
+	.grid--gutters .grid__offset--7 { margin-right: 59.5%; }
+	.grid--gutters .grid__offset--8 { margin-right: 68.0%; }
+	.grid--gutters .grid__offset--9 { margin-right: 76.5%; }
+	.grid--gutters .grid__offset--10 { margin-right: 85.0%; }
+	.grid--gutters .grid__offset--11 { margin-right: 93.5%; }
+	.grid--gutters .grid__offset--12 { margin-right: 100%; }
+}

@@ -1,0 +1,118 @@
+.grid { 
+	width: 100%;
+	margin: 0 auto;
+	letter-spacing: -0.35em;
+	
+	&--right{
+		text-align: right;
+	}
+
+	&--center{
+		text-align: center;
+	}
+
+	&--justify {
+		display: block;
+		text-align: justify;
+		text-justify: distribute-all-lines;
+		
+		&:after{
+			content: '';
+			display: inline-block;
+			width: 100%;
+		}
+	}
+
+	&--middle &__col{
+		vertical-align: middle;
+	}
+
+	&--top &__col{
+		vertical-align: top;
+	}
+
+	&--bottom &__col{
+		vertical-align: bottom;
+	}
+
+	&__col{
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		display: block;
+		width: 100%;
+		vertical-align: top;
+		letter-spacing: normal;
+		word-spacing: normal;
+		word-wrap: break-word;
+		
+		&--middle{
+			vertical-align: middle;
+		}
+
+		&--top{
+			vertical-align: top;
+		}
+
+		&--bottom{
+			vertical-align: bottom;
+		}
+	}
+}
+
+
+@media ( min-width : 768px ) {
+	
+	.grid{
+
+		&--gutters &__col{
+			margin-left: 2%;
+			
+			&:first-child{
+				margin-left: 0; 
+			}	
+		}
+
+		&__col{
+			display: inline-block;
+			width: auto;
+			
+			@for $i from 1 through 12{
+				&--#{$i}{
+					width: 100% / 12 * $i;
+				}
+			}
+		}
+
+		&__offset{
+			@for $i from 1 through 12{
+				&--#{$i}{
+					margin-right: 100% / 12 * $i;
+				}
+			}
+		}
+
+		&--gutters &__col{
+			@for $i from 1 through 11{
+				&--#{$i}{
+					width: 8.5% * $i -2;
+				}
+			}
+			&--12{
+				width: 100%;
+			}
+		}
+
+		&--gutters &__offset{
+			@for $i from 1 through 11{
+				&--#{$i}{
+					margin-right: 8.5% * $i;
+				}
+			}
+
+			&--12{
+				margin-right: 100%;
+			}
+		}
+	}	
+}
