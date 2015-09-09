@@ -1,5 +1,12 @@
+/* configs
+--------------------------------------------------------- */
+@import "configs";
+
+
+/* grid
+--------------------------------------------------------- */
 .grid { 
-	width: 100%;
+	width: $var-max-width;
 	margin: 0 auto;
 	letter-spacing: -0.35em;
 	
@@ -19,7 +26,7 @@
 		&:after{
 			content: '';
 			display: inline-block;
-			width: 100%;
+			width: $var-max-width;
 		}
 	}
 
@@ -40,7 +47,7 @@
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
 		display: block;
-		width: 100%;
+		width: $var-max-width;
 		vertical-align: top;
 		letter-spacing: normal;
 		word-spacing: normal;
@@ -61,15 +68,15 @@
 }
 
 
-@media ( min-width : 768px ) {
+@media ( min-width : $var-breakpoint ) {
 	
 	.grid{
 
 		&--gutters &__col{
-			margin-left: 2%;
+			margin-left: $var-col-gutters;
 			
 			&:first-child{
-				margin-left: 0; 
+				margin-left: 0;
 			}	
 		}
 
@@ -77,41 +84,41 @@
 			display: inline-block;
 			width: auto;
 			
-			@for $i from 1 through 12{
+			@for $i from 1 through $var-col{
 				&--#{$i}{
-					width: 100% / 12 * $i;
+					width: $var-col-width * $i;
 				}
 			}
 		}
 
 		&__offset{
-			@for $i from 1 through 12{
+			@for $i from 1 through $var-col{
 				&--#{$i}{
-					margin-right: 100% / 12 * $i;
+					margin-right: $var-col-width * $i;
 				}
 			}
 		}
 
 		&--gutters &__col{
-			@for $i from 1 through 11{
+			@for $i from 1 through $var-col - 1{
 				&--#{$i}{
-					width: 8.5% * $i -2;
+					width: $var-col-width-gutters * $i - $var-col-gutters;
 				}
 			}
 			&--12{
-				width: 100%;
+				width: $var-max-width;
 			}
 		}
 
 		&--gutters &__offset{
-			@for $i from 1 through 11{
+			@for $i from 1 through $var-col - 1{
 				&--#{$i}{
-					margin-right: 8.5% * $i;
+					margin-right: $var-col-width-gutters * $i;
 				}
 			}
 
 			&--12{
-				margin-right: 100%;
+				margin-right: $var-max-width;
 			}
 		}
 	}	
