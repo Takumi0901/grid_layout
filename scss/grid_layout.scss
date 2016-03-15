@@ -105,7 +105,7 @@
 					width: $var-col-width-gutters * $i - $var-col-gutters;
 				}
 			}
-			&--12{
+			&--#{$var-col}{
 				width: $var-max-width;
 			}
 		}
@@ -117,7 +117,7 @@
 				}
 			}
 
-			&--12{
+			&--#{$var-col}{
 				margin-right: $var-max-width;
 			}
 		}
